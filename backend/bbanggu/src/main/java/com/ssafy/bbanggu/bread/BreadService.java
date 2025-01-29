@@ -39,7 +39,12 @@ public class BreadService {
 		bread.setName(breadDto.getName());
 		bread.setPrice(breadDto.getPrice());
 		bread.setCreatedAt(LocalDateTime.now());
-		bread.setBreadImageUrl(imageService.saveImage(file));
+
+		if (file != null && !file.isEmpty()) {
+			bread.setBreadImageUrl(imageService.saveImage(file));
+		} else {
+			bread.setBreadImageUrl(null);
+		}
 
 		return breadRepository.save(bread);
 	}
