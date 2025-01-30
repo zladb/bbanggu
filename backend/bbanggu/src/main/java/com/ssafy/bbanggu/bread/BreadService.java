@@ -2,6 +2,7 @@ package com.ssafy.bbanggu.bread;
 
 import java.io.IOException;
 import java.time.LocalDateTime;
+import java.util.List;
 
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -51,5 +52,15 @@ public class BreadService {
 
 	public Bread getBread(long breadId) {
 		return breadRepository.findById(breadId).orElse(null);
+	}
+
+	public List<Bread> getBreadByBakeryId(long bakeryId) {
+		return breadRepository.findByBakery_BakeryIdAndDeletedAtIsNull(bakeryId);
+	}
+
+	public void deleteBread(long breadId) {
+		Bread bread = breadRepository.findById(breadId)
+			.orElseThrow(() -> new RuntimeException("Bread not found"));
+		bread.setDeletedAt(LocalDateTime.now());
 	}
 }
