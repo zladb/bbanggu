@@ -22,7 +22,7 @@ public class Reservation {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "reservation_id")
+    @Column(name = "reservation_id", columnDefinition = "INT UNSIGNED")
     private Long reservationId; // 예약 ID
 
     @ManyToOne
