@@ -1,10 +1,10 @@
 import { useParams, Link } from "react-router-dom"
 import { useBakeryDetail } from "../../hooks/useBakeryDetail"
-import BakeryHeader from "../../components/bakerydetail/BakeryHeader"
-import BakeryInfo from "../../components/bakerydetail/BakeryInfo"
-import BakeryLocation from "../../components/bakerydetail/BakeryLocation"
-import BakeryReviews from "../../components/bakerydetail/BakeryReviews"
-import OrderButton from "../../components/bakerydetail/OrderButton"
+import BakeryHeader from "../../components/user/bakerydetail/BakeryHeader"
+import BakeryInfo from "../../components/user/bakerydetail/BakeryInfo"
+import BakeryLocation from "../../components/user/bakerydetail/BakeryLocation"
+import BakeryReviews from "../../components/user/bakerydetail/BakeryReviews"
+import OrderButton from "../../components/user/bakerydetail/OrderButton"
 
 export default function BakeryDetail() {
   const { name } = useParams<{ name: string }>()
