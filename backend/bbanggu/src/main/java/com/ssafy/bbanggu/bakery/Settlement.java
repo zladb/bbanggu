@@ -20,7 +20,7 @@ public class Settlement {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "settlement_id")
+    @Column(name = "settlement_id", columnDefinition = "INT UNSIGNED")
     private Long settlementId; // 정산 ID
 
     @OneToOne
