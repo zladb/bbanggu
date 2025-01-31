@@ -26,7 +26,7 @@ public class Bakery {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "bakery_id")
+    @Column(name = "bakery_id", columnDefinition = "INT UNSIGNED")
     private Long bakeryId; // 가게 ID
 
     @ManyToOne(fetch = FetchType.LAZY)
