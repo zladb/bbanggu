@@ -20,7 +20,7 @@ public class EchoSaving {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "echo_saving_id")
+    @Column(name = "echo_saving_id", columnDefinition = "INT UNSIGNED")
     private Long echoSavingId; // 에코 세이빙 ID
 
     @OneToOne

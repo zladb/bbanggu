@@ -21,7 +21,7 @@ public class Stock {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "stock_id")
+    @Column(name = "stock_id", columnDefinition = "INT UNSIGNED")
     private Long stockId; // 재고 ID
 
     @ManyToOne

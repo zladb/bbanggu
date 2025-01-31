@@ -19,7 +19,7 @@ public class Bread {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "bread_id")
+	@Column(name = "bread_id", columnDefinition = "INT UNSIGNED")
 	private Long breadId; // 빵 ID
 
 	@ManyToOne
