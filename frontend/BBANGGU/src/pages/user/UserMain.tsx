@@ -1,9 +1,9 @@
 import React from "react"
 import { useUsermain } from "../../hooks/useUsermain"
-import SearchBar from "../../components/usermain/SearchBar"
-import Header from "../../components/usermain/Header"
-import BestPackages from "../../components/usermain/BestPackages"
-import RecommendedStores from "../../components/usermain/RecommendedStores"
+import SearchBar from "../../components/user/usermain/SearchBar"
+import Header from "../../components/user/usermain/Header"
+import BestPackages from "../../components/user/usermain/BestPackages"
+import RecommendedStores from "../../components/user/usermain/RecommendedStores"
 import ErrorBoundary from "../../components/ErrorBoundary"
 import { useNavigate } from "react-router-dom"
 
@@ -82,7 +82,7 @@ export default function UserMain() {
                   <img
                     src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/%EB%B9%B5%EB%AA%A8%EC%96%91-DlwgBPrBVIJDKfxeSt00fJB57i08V3.png"
                     alt=""
-                    className="w-[18vh] h-[18vh] object-contain"
+                    className="w-[20vh] h-[20vh] object-contain"
                   />
                 </div>
               </div>

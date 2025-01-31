@@ -6,8 +6,8 @@ interface MobileLayoutProps {
 
 function MobileLayout({ children }: MobileLayoutProps) {
   return (
-    <div className="flex justify-center min-h-screen bg-gray-100">
-      <div className="w-full max-w-[480px] mx-auto bg-white min-h-screen relative">
+    <div className="w-full min-h-screen bg-white font-['Pretendard']">
+      <div className="mx-auto min-w-[300px] max-w-[440px] overflow-x-hidden">
         {children}
       </div>
     </div>
