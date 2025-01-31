@@ -1,5 +1,6 @@
 package com.ssafy.bbanggu.bakery;
 
+import com.ssafy.bbanggu.user.domain.User;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -14,7 +15,6 @@ import com.ssafy.bbanggu.breadpackage.BreadPackage;
 import com.ssafy.bbanggu.favorite.Favorite;
 import com.ssafy.bbanggu.review.Review;
 import com.ssafy.bbanggu.stock.Stock;
-import com.ssafy.bbanggu.user.User;
 
 @Data
 @Builder
