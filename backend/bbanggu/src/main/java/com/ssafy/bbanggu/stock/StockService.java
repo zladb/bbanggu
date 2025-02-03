@@ -13,7 +13,10 @@ import lombok.RequiredArgsConstructor;
 public class StockService {
 	private final StockRepository stockRepository;
 
-	public Bread insertStock() {
+	public Stock insertStock() {
 		return null;
+	}
+
+	public void updateStock(StockDTO stockDto) {
 	}
 }
