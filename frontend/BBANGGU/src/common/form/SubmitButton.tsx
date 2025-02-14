@@ -2,7 +2,7 @@ interface SubmitButtonProps {
     text: string | JSX.Element;
     disabled?: boolean;
     className?: string;
-    onClick?: () => void;
+    onSubmit: (e: React.FormEvent) => void;
     type?: 'submit' | 'button';
   }
   
@@ -10,14 +10,14 @@ interface SubmitButtonProps {
     text, 
     disabled = false,
     className = '',
-    onClick,
+    onSubmit,
     type = 'submit'
   }: SubmitButtonProps) {
     return (
       <button
         type={type}
         disabled={disabled}
-        onClick={onClick}
+        onClick={onSubmit}
         className={`
           w-full py-4 rounded-[8px] 
           ${disabled 
