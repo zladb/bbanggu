@@ -178,15 +178,26 @@ export default function OwnerSignupPage() {
         businessRegistrationNumber: formData.businessRegistrationNumber,
         addressRoad: formData.storeAddress,
         addressDetail: formData.storeAddressDetail,
-        bakeryImageUrl: "https://example.com/bakery.jpg",
-        bakryBackgroundImgUrl: "https://example.com/background.jpg"
+        storePhoto: formData.storePhoto,
       };
 
+ 
+      let bakeryImageUrl: File | undefined = undefined;
+  
+      if (formData.storePhoto && typeof formData.storePhoto === "string") {
+        const res = await fetch(formData.storePhoto);
+        const blob = await res.blob();
+        bakeryImageUrl = new File([blob], 'store-photo.jpg', { type: blob.type });
+      }
+  
       console.log('Store data being sent to API:', storeData);  // API로 보내는 데이터 확인
-      
-      const response = await OwnerApi.registerStore(storeData);
+  
+      const response = await OwnerApi.registerStore({
+        ...storeData,
+        bakeryImage: bakeryImageUrl,  // File 객체로 전달
+      });
+  
       console.log('API response:', response);  // API 응답 확인
-      
       setCurrentStep("settlement");
     } catch (error: any) {
       console.error('Store registration error details:', error.response?.data || error);
