@@ -235,7 +235,9 @@ public class ReservationService {
 			.orElseThrow(() -> new CustomException(ErrorCode.BREAD_PACKAGE_NOT_FOUND));
 
 		int quantity_origin = breadPackage.getQuantity();
+		log.info("✅ {}번 빵꾸러미 원래 개수: {}", breadPackage.getPackageId(), quantity_origin);
 		breadPackage.setQuantity(quantity_origin + reservation.getQuantity());
+		log.info("✅ 변경된 개수: " + breadPackage.getQuantity());
 		BreadPackage newBreadPackage = breadPackageRepository.save(breadPackage);
 		log.info("✅ {}번 빵꾸러미 남은 개수: {} -> {}개", newBreadPackage.getPackageId(), quantity_origin,
 			newBreadPackage.getQuantity());
